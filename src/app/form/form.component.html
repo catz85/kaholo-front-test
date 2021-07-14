@@ -1,0 +1,9 @@
+<form [formGroup]="dataForm" (ngSubmit)="onSubmit()">
+	<div class="form-group" [ngClass]="{ 'has-error': invalidCommand() }">
+		<input type="text" formControlName="command" class="form-control" id="command" name="command" placeholder="Type here">
+		<p *ngIf="invalidCommand()" id="command_error" class="help-block">Invalid command.</p>
+	</div>
+	<div class="form-group has-error"> 
+		<button type="submit" class="btn btn-primary">Send</button>
+	</div>
+</form>	
